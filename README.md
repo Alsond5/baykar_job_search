@@ -2,6 +2,8 @@
 
 This project was made for Baykar Technology.
 
+##[Photos](https://github.com/Alsond6/baykar_job_search/tree/main)
+
 ## Getting Started
 
 These instructions will give you a copy of the project up and running on
