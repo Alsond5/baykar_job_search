@@ -40,5 +40,5 @@
 ![This is an image](/images/jobs.jpeg)
 >Jobs page in admin panel
 
-![This is an image](/images/applicants.jpeg)
+![This is an image](/images/Applicants.jpeg)
 >Applicants page in admin panel
