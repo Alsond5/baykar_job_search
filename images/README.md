@@ -30,3 +30,15 @@
 
 ![This is an image](/images/profile.jpeg)
 >Profile page
+
+![This is an image](/images/admin-panel.jpeg)
+>Admin panel
+
+![This is an image](/images/profiles.jpeg)
+>Profiles page in admin panel
+
+![This is an image](/images/jobs.jpeg)
+>Jobs page in admin panel
+
+![This is an image](/images/applicants.jpeg)
+>Applicants page in admin panel
