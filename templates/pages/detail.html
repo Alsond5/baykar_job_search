@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Career - Ana Sayfa{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+{% endblock %}
+
+{% block large-title %}
+    <h2>DETAILS</h2>
+{% endblock %}
+
+{% block slogan %}
+    <h2>{{job.title|title}}</h2>
+{% endblock %}
+
+{% block content %}
+<main>
+    {% if message %}
+        <div class="active message">
+            <p> {{message}} </p>
+        </div>
+        <script>
+            const msg = document.querySelector('.message');
+
+            function notification() {
+                msg.classList.remove('active');
+            }
+
+            setTimeout(notification, 5000);
+        </script>
+    {% endif %}
+    <div class="details">
+        <div class="job-title">
+            <h2>DETAILS</h2>
+        </div>
+        <div class="content">
+            <p>Release date: <span>{{job.created_on}}</span></p>
+            <p>{{job.description|safe}}</p>
+            <h3 style="margin: 10px 0 0;">Tags: </h3>
+            <p style="margin: 5px 0 0;" > {{job.require_skills|join:" - "|title}} </p>
+        </div>
+        <div class="apply-block">
+            {% if is_applied %}
+            <button type="button" disabled>You've already applied</button>
+            {% else %}
+            <a href="{% url 'apply' job.id %}"><button>Apply</button></a>
+            {% endif %}
+        </div>
+    </div>
+</main>
+{% endblock %}

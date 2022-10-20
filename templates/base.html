@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+    <button class="goTop"><i class="fi fi-sr-angle-small-up"></i></button>
+    <header>
+        <div class="topbar">
+            <div class="title">
+                <a href="{% url 'index' %}"><h1>Career<span>.</span></h1></a>
+            </div>
+            <div class="account-block">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'profile' %}"><button class="btn register">Profile</button></a>
+                    <a href="{% url 'logout' %}"><button class="btn login">Logout</button></a>
+                {% else %}
+                    <a href="{% url 'register' %}"><button class="btn register">Register</button></a>
+                    <a href="{% url 'login' %}"><button class="btn login">Login</button></a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="slogan-block">
+            <div class="large-title">
+                {% block large-title %}
+                    
+                {% endblock %}
+            </div>
+            {% block slogan %}
+            {% endblock %}
+        </div>
+        {% block header %}
+        {% endblock %}
+    </header>
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <a href="{% url 'index' %}"><h3>Career<span>.</span></h3></a>
+        <p>© 2022 Ahmet İdris</p>
+    </footer>
+</body>
+</html>

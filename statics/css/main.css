@@ -1,0 +1,94 @@
+.slogan-block {
+    width: 100%;
+    height: calc(75vh - 65px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5%;
+}
+header {
+    width: 100%;
+    height: 75vh;
+    background: #171924 none repeat scroll 0 0;
+}
+.text-area {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.image-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    margin-left: auto;
+}
+.text-area h1 {
+    color: #FFF;
+    font-size: 64px;
+}
+.text-area p {
+    color: #dedede;
+    margin: 15px 0 0;
+}
+main {
+    width: 100%;
+    padding: 0 5%;
+    margin: 50px 0 0;
+    display: flex;
+}
+.job-advertisements-block {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.job {
+    width: 100%;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    padding: 2%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.company-logo {
+    width: fit-content;
+    height: 100%;
+    margin-right: 25px;
+}
+.details {
+    color: #171924;
+}
+.details h2 {
+    font-size: 20px;
+}
+.details p {
+    margin: 8px 0;
+    font-size: 15px;
+}
+.details span {
+    font-weight: 300;
+    font-size: 13px;
+    color: #3ceaaa;
+}
+.search-block {
+    width: 35%;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.search-block input{
+    border: 2px solid #171924;
+    outline: none;
+    width: 350px;
+    height: 50px;
+    border-radius: 5px;
+    font-family: 'Inter', sans-serif;
+    color: #171924;
+    margin-bottom: 15px;
+    padding: 0 3%;
+}

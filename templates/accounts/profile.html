@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Career - Ana Sayfa{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/account.css' %}">
+    <style>
+        form p {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+{% endblock %}
+
+{% block large-title %}
+    <h2>PROFILE</h2>
+{% endblock %}
+
+{% block slogan %}
+    <h2>{{user.get_full_name|title}}</h2>
+{% endblock %}
+{% block content %}
+    <main>
+        <form enctype="multipart/form-data" action="{% url 'profile' %}" method="POST">
+            {% csrf_token %}
+
+            {{update_profile.as_p}}
+
+            <input type="submit" value="Save">
+        </form>
+        <input class="delete" type="button" value="Delete Account">
+    </main>
+
+    <script defer>
+        const delete_btn = document.querySelector('.delete');
+
+        delete_btn.addEventListener("click", () => {
+            delete_account();
+        });
+
+        function delete_account() {
+        let url = `{% url 'delete_account' user.id %}`;
+        let txt = 'Do you confirm that your account will be deleted?';
+
+        if (confirm(txt) == true) {
+            window.location.href = url;
+        }
+    }
+    </script>
+{% endblock %}

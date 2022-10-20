@@ -1,0 +1,72 @@
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+main {
+    width: 100%;
+    min-height: calc(100vh - 65px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.details {
+    width: 50%;
+    height: fit-content;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.job-title {
+    color: #171924;
+    margin: 0 0 50px;
+    text-align: center;
+}
+.content {
+    color: #202333;
+}
+.content span {
+    font-weight: 300;
+    margin: 0 0 10px;
+    color: #202333 !important;
+}
+.content p:first-child {
+    color: #3ceaaa;
+    margin-bottom: 10px;
+}
+.apply-block {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 25px 0 0;
+}
+.apply-block button {
+    width: 250px;
+    height: 3rem;
+    border-radius: 5px;
+    background-color: #3ceaaa;
+    color: #171924;
+    margin-right: auto;
+    border: none;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    transition: all .2s ease-in;
+    cursor: pointer;
+}
+.apply-block button:hover {
+    background-color: #00ffa2;
+}
+.message {
+    display: none;
+    position: fixed;
+    height: 50px;
+    border-radius: 5px;
+    align-items: center;
+    padding: 0 2%;
+    top: 100px;
+    right: 5px;
+    background: #3ceaaa;
+    color: #171924;
+    width: fit-content;
+}

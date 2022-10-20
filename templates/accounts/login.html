@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Career - Ana Sayfa{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/account.css' %}">
+{% endblock %}
+
+{% block large-title %}
+    <h2>LOGIN</h2>
+{% endblock %}
+
+{% block slogan %}
+    <h2>Login</h2>
+{% endblock %}
+{% block content %}
+    <main>
+        
+        {% if error %}
+            <div class="error">
+                <p> {{error}} </p>
+            </div>
+        {% endif %}
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+
+            <label for="uname">Username:</label>
+            <input type="text" name="uname" id="uname" placeholder="Username" required>
+
+            <label for="pw">Password:</label>
+            <input type="password" name="pw" id="pw" placeholder=" Password" required>
+
+            <input type="submit" value="Login">
+            <a style="text-decoration: none; color: #171924; font-size: 15px;" href="{% url 'forgot_pw' %}">Forgot my password!</a>
+        </form>
+    </main>
+{% endblock %}

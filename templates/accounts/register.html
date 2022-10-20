@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Career - Ana Sayfa{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/account.css' %}">
+{% endblock %}
+
+{% block large-title %}
+    <h2>REGISTER</h2>
+{% endblock %}
+
+{% block slogan %}
+    <h2>Register</h2>
+{% endblock %}
+{% block content %}
+    <main>
+        {% if error %}
+            <div class="error">
+                <p> {{error}} </p>
+            </div>
+        {% endif %}
+        <form action="{% url 'register' %}" method="POST">
+            {% csrf_token %}
+
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Name" required>
+            
+            <label for="name">Surname:</label>
+            <input type="text" name="surname" id="surname" placeholder="Surname" required>
+
+            <label for="name">Username:</label>
+            <input type="text" name="uname" id="uname" placeholder="Username" required>
+
+            <label for="name">Email:</label>
+            <input type="email" name="email" id="email" placeholder="E-mail" required>
+
+            <label for="name">Password:</label>
+            <input type="password" name="pw" id="pw" placeholder=" Password" required>
+
+            <input type="submit" value="Register">
+        </form>
+    </main>
+{% endblock %}

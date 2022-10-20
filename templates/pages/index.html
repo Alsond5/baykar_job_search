@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Career - Ana Sayfa{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% endblock %}
+
+{% block slogan %}
+    <div class="text-area">
+        <h1>Find and apply for your dream job now</h1>
+        <p>Finding a job is now very easy with career. Find the ones that suit you among the many job postings and apply now.</p>
+    </div>
+    <div class="image-area">
+        <img width="100%" src="https://img.freepik.com/free-vector/recruit-agent-analyzing-candidates_74855-4565.jpg?w=2000" alt="jobs">
+    </div>
+{% endblock %}
+
+{% block content %}   
+{% if search %}
+    <div style="width: 100%; padding: 0 5%; display: flex; align-items: center; margin: 50px 0 0;" class="results">
+        <h3 style="color: #171924; font-size: 26px;">Results for <span style="color: #3ceaaa;">{{search|join:", "}}</span></h3>
+    </div>
+{% endif %}
+<main>
+    <div class="job-advertisements-block">
+        {% for job in jobs %}
+        <a href="{% url 'jobdetails' job.slug job.id %}">
+        <div class="job">
+            <div class="company-logo">
+                <img height="100%" src="https://cdn.baykartech.com/media/images/contents/baykar.png" alt="">
+            </div>
+           
+            <div class="details">
+                <h2>{{job.title}}</h2>
+                <p> {{job.department}} | {{job.created_on}} </p>
+                <span> {{job.country}} </span>
+            </div>
+        </div>
+        </a>
+        {% endfor %}
+    </div>
+    <div class="search-block">
+        <form method="post">
+            {% csrf_token %}
+            <input type="search" name="search" id="search" placeholder="Search job">
+            <p style="font-size: 13px;">*Separate skills with commas</p>
+        </form>
+    </div>
+</main>
+{% endblock %}
